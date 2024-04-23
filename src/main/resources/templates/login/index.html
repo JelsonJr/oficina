@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head th:insert="~{fragments/header}">
+    <title>Title</title>
+</head>
+<body class="bg-cinza-claro dark:bg-preto flex items-center justify-center h-screen">
+    <section class="my-auto mx-auto w-full max-w-lg">
+        <h1 class="text-center text-xl text-cinza dark:text-branco my-4">Insira seu email e senha de acesso para concluir o log in</h1>
+        <form th:action="@{/login}" method="post" class="bg-branco shadow-md rounded px-8 pt-6 pb-8 mb-4 dark:bg-cinza">
+            <div class="relative z-0 w-full mb-5 group">
+                <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none text-white border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        placeholder=" "
+                        required
+                />
+                <label
+                        for="email"
+                        class="peer-focus:font-medium absolute text-sm text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                >
+                    Endereço de email
+                </label>
+            </div>
+            <div class="relative z-0 w-full mb-5 group">
+                <input
+                        type="password"
+                        name="senha"
+                        id="senha"
+                        class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none text-white border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        placeholder=" "
+                        required
+                />
+                <label
+                        for="senha"
+                        class="peer-focus:font-medium absolute text-sm text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                >
+                    Senha de acesso
+                </label>
+            </div>
+            <div class="flex items-center justify-between">
+                <a href="/" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline dark:bg-red-600 dark:hover:bg-red-700 dark:focus:bg-red-800">
+                    Voltar para home
+                </a>
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:bg-blue-800">
+                    Logar
+                </button>
+            </div>
+        </form>
+    </section>
+</body>
+</html>

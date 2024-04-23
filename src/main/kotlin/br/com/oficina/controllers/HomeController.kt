@@ -10,8 +10,7 @@ import org.springframework.web.servlet.ModelAndView
 class HomeController {
 
     @GetMapping
-    fun home(): ModelAndView {
-        val modelAndView = ModelAndView("index")
-        return modelAndView
+    fun home(): String {
+        return "index"
     }
 }
