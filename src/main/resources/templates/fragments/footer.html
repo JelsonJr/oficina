@@ -1,10 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+<html lang="pt-br">
+<head th:insert="header">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<footer th:fragment="footer" id="footer-contato" class="mt-8 bg-cinza shadow dark:bg-preto">
+    <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://github.com/JelsonJr" target="_blank" class="hover:underline">ColtMaster™</a>. All Rights Reserved.
+    </span>
+        <ul class="flex flex-wrap items-center gap-10 mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+            <li class="flex flex-col items-center justify-center">
+                <a href="#" class="hover:underline me-4 md:me-6">WhatsApp</a>
+                <p>(42) 99999-9999</p>
+            </li>
+            <li>
+                <a href="#" class="hover:underline me-4 md:me-6">TikTok</a>
+                <p>@Oficina_SeuGilberto</p>
+            </li>
+            <li>
+                <a href="#" class="hover:underline me-4 md:me-6">Instagram</a>
+                <p>@OficinaSeuGilberto</p>
+            </li>
+            <li>
+                <a href="https://github.com/JelsonJr" target="_blank" class="hover:underline">Github</a>
+                <p>@JelsonJr/oficina</p>
+            </li>
+        </ul>
+    </div>
+</footer>
 </body>
 </html>

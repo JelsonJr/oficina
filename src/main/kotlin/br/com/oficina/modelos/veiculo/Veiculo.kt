@@ -1,4 +1,4 @@
-package br.com.oficina.modelos
+package br.com.oficina.modelos.veiculo
 
 import br.com.oficina.modelos.usuario.Usuario
 import jakarta.persistence.Entity

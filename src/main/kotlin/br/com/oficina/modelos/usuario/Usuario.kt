@@ -1,5 +1,6 @@
-package br.com.oficina.modelos
+package br.com.oficina.modelos.usuario
 
+import br.com.oficina.modelos.veiculo.Veiculo
 import jakarta.persistence.*
 
 @Entity
