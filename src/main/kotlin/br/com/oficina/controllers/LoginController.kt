@@ -15,6 +15,7 @@ class LoginController {
         @RequestParam(name = "loginError", required = false) loginError: Boolean,
         @RequestParam(name = "logoutSuccess", required = false) logoutSuccess: Boolean,
         @RequestParam(name = "cadastroSuccess", required = false) cadastroSuccess: Boolean,
+        @RequestParam(name = "cookieExpired", required = false) cookieExpired: Boolean,
         model: Model
     ): String {
         model.addAttribute("dadosLogin", DadosLoginUsuario("", ""))
@@ -26,7 +27,12 @@ class LoginController {
 
         if (loginError) {
             println("Login error - LoginController")
-            model.addAttribute("loginError", "Log in inválido, por favor tente novamente.")
+            model.addAttribute("loginError", "Login inválido, por favor tente novamente.")
+        }
+
+        if (cookieExpired) {
+            println("Cookie Expired - LoginController")
+            model.addAttribute("cookieExpired", "Tempo de acesso expirado, por favor, realize o login novamente.")
         }
 
         if (logoutSuccess) {

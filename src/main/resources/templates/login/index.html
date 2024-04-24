@@ -9,6 +9,7 @@
 
         <h2 th:if="${loginError}" th:text="${loginError}" class="text-center text-red-600 text-lg my-4"></h2>
         <h2 th:if="${loginRequired}" th:text="${loginRequired}" class="text-center text-red-600 text-lg my-4"></h2>
+        <h2 th:if="${cookieExpired}" th:text="${cookieExpired}" class="text-center text-red-600 text-lg my-4"></h2>
         <h2 th:if="${logoutSuccess}" th:text="${logoutSuccess}" class="text-center text-green-600 text-lg my-4"></h2>
         <h2 th:if="${cadastroSuccess}" th:text="${cadastroSuccess}" class="text-center text-green-600 text-lg my-4"></h2>
 

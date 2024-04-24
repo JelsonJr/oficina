@@ -11,11 +11,15 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.security.web.SecurityFilterChain
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher
 
 @Configuration
 @EnableWebSecurity
-class SecurityConfiguration {
+class SecurityConfiguration(
+    private val customAuthenticationSuccessHandler: CustomAuthenticationSuccessHandler,
+    private val filter: SecurityFilter
+) {
 
     @Bean
     @Throws(Exception::class)
@@ -30,15 +34,16 @@ class SecurityConfiguration {
                 it.loginPage("/login")
                     .usernameParameter("email")
                     .passwordParameter("senha")
-                    .defaultSuccessUrl("/")
+                    .successHandler(customAuthenticationSuccessHandler)
                     .failureUrl("/login?loginError=true")
             }
             .logout {
                 it.logoutRequestMatcher(AntPathRequestMatcher("/logout", "GET"))
                     .logoutSuccessUrl("/login?logoutSuccess=true")
-                    .deleteCookies("JSESSIONID")
+                    .deleteCookies("usuario_id")
                     .invalidateHttpSession(true)
             }
+            .addFilterBefore(filter, UsernamePasswordAuthenticationFilter::class.java)
             .build()
     }
 
@@ -46,7 +51,7 @@ class SecurityConfiguration {
     fun webSecurityCustomizer(): WebSecurityCustomizer {
         return WebSecurityCustomizer { web: WebSecurity ->
             web.ignoring()
-                .requestMatchers("/css/**", "/js/**", "/images/**", "/fonts/**", "/*.png", "/*.ico", "/*.jpg", "/error")
+                .requestMatchers("/css/**", "/js/**", "/fonts/**", "/images/**", "/*.png", "/*.ico", "/*.jpg", "/error")
         }
     }
 
