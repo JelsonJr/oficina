@@ -34,4 +34,8 @@ class Usuario(
     override fun isCredentialsNonExpired(): Boolean = true
 
     override fun isEnabled(): Boolean = true
+
+    override fun toString(): String {
+        return "Usuario: $nome, $email, $telefone, $cpf, $veiculos"
+    }
 }

@@ -15,4 +15,8 @@ class Veiculo(
 
         @ManyToOne
         var proprietario: Usuario? = null
-) {}
+) {
+        override fun toString(): String {
+                return "Veiculo: $placa, $modelo, $ano, $proprietario"
+        }
+}

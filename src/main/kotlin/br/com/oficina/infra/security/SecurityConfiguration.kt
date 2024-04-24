@@ -34,7 +34,7 @@ class SecurityConfiguration {
     @Bean
     fun webSecurityCustomizer(): WebSecurityCustomizer {
         return WebSecurityCustomizer { web: WebSecurity ->
-            web.ignoring().requestMatchers("/css/**", "/js/**", "/images/**", "/fonts/**", "/*.png", "/*.ico", "/*.jpg","/error")
+            web.ignoring().requestMatchers("/css/**", "/js/**", "/images/**", "/fonts/**", "/*.png", "/*.ico", "/*.jpg")
         }
     }
 

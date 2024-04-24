@@ -5,7 +5,13 @@
 </head>
 <body class="bg-cinza-claro dark:bg-preto flex items-center justify-center h-screen">
 <section class="my-auto mx-auto w-full max-w-lg">
-    <form class="bg-branco shadow-md rounded px-8 pt-6 pb-8 mb-4 dark:bg-cinza" th:action="@{/usuario/cadastro}" method="post">
+    <h1 class="text-center text-xl text-cinza dark:text-branco my-4">Insira as informações para completar o seu
+        cadastro</h1>
+    <form class="bg-branco shadow-md rounded px-8 pt-6 pb-8 mb-4 dark:bg-cinza" th:object="${dadosCadastro}"
+          th:action="@{/usuario/cadastro}" method="post">
+        <div class="relative z-0 w-full mb-5 group">
+            <h2 class="text-center text-xl text-cinza dark:text-branco">Informações do proprietário</h2>
+        </div>
         <div class="relative z-0 w-full mb-5 group">
             <input
                     type="text"
@@ -13,6 +19,7 @@
                     id="nome"
                     class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none text-white border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     placeholder=" "
+                    th:field="*{nome}"
                     required
             />
             <label
@@ -21,6 +28,7 @@
             >
                 Nome
             </label>
+            <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="text-red-600 text-sm"></span>
         </div>
         <div class="relative z-0 w-full mb-5 group">
             <input
@@ -29,6 +37,7 @@
                     id="cpf"
                     class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none text-white border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     placeholder=" "
+                    th:field="*{cpf}"
                     required
             />
             <label
@@ -37,6 +46,7 @@
             >
                 CPF
             </label>
+            <span th:if="${#fields.hasErrors('cpf')}" th:errors="*{cpf}" class="text-red-600 text-sm"></span>
         </div>
         <div class="relative z-0 w-full mb-5 group">
             <input
@@ -45,6 +55,7 @@
                     id="email"
                     class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none text-white border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     placeholder=" "
+                    th:field="*{email}"
                     required
             />
             <label
@@ -53,6 +64,7 @@
             >
                 Endereço de email
             </label>
+            <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-red-600 text-sm"></span>
         </div>
         <div class="relative z-0 w-full mb-5 group">
             <input
@@ -61,6 +73,7 @@
                     id="senha"
                     class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none text-white border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     placeholder=" "
+                    th:field="*{senha}"
                     required
             />
             <label
@@ -69,6 +82,7 @@
             >
                 Senha de acesso
             </label>
+            <span th:if="${#fields.hasErrors('senha')}" th:errors="*{senha}" class="text-red-600 text-sm"></span>
         </div>
         <div class="relative z-0 w-full mb-5 group">
             <input
@@ -77,6 +91,7 @@
                     id="telefone"
                     class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none text-white border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     placeholder=" "
+                    th:field="*{telefone}"
             />
             <label
                     for="telefone"
@@ -84,6 +99,68 @@
             >
                 Telefone (opcional)
             </label>
+            <span th:if="${#fields.hasErrors('telefone')}" th:errors="*{telefone}" class="text-red-600 text-sm"></span>
+        </div>
+        <div class="relative z-0 w-full mb-5 group">
+            <h2 class="text-center text-xl text-cinza dark:text-branco">Informações do veículo</h2>
+        </div>
+        <div class="relative z-0 w-full mb-5 group">
+            <input
+                    type="text"
+                    name="placa"
+                    id="placa"
+                    class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none text-white border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" "
+                    th:field="*{placa}"
+                    required
+            />
+            <label
+                    for="placa"
+                    class="peer-focus:font-medium absolute text-sm text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+                Placa do veículo
+            </label>
+            <span th:if="${#fields.hasErrors('placa')}" th:errors="*{placa}" class="text-red-600 text-sm"></span>
+        </div>
+        <div class="relative z-0 w-full mb-5 group">
+            <input
+                    type="text"
+                    name="modelo"
+                    id="modelo"
+                    class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none text-white border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" "
+                    th:field="*{modelo}"
+                    required
+            />
+            <label
+                    for="modelo"
+                    class="peer-focus:font-medium absolute text-sm text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+                Modelo do veículo
+            </label>
+            <span th:if="${#fields.hasErrors('modelo')}" th:errors="*{modelo}" class="text-red-600 text-sm"></span>
+        </div>
+        <div class="relative z-0 w-full mb-5 group">
+            <input
+                    type="number"
+                    min="1885"
+                    max="2024"
+                    maxlength="4"
+                    pattern="\d{4}"
+                    name="ano"
+                    id="ano"
+                    class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none text-white border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" "
+                    th:field="*{ano}"
+                    required
+            />
+            <label
+                    for="ano"
+                    class="peer-focus:font-medium absolute text-sm text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+                Ano do modelo
+            </label>
+            <span th:if="${#fields.hasErrors('ano')}" th:errors="*{ano}" class="text-red-600 text-sm"></span>
         </div>
         <div class="flex justify-between items-center gap-5">
             <button

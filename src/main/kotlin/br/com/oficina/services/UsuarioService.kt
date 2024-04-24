@@ -1,8 +1,8 @@
 package br.com.oficina.services
 
-import br.com.oficina.extensions.toModel
-import br.com.oficina.modelos.usuario.DadosCadastroUsuario
-import br.com.oficina.modelos.veiculo.Veiculo
+import br.com.oficina.extensions.toUsuario
+import br.com.oficina.extensions.toVeiculo
+import br.com.oficina.modelos.DadosCadastro
 import br.com.oficina.repositorys.UsuarioRepository
 import br.com.oficina.repositorys.VeiculoRepository
 import org.springframework.security.crypto.password.PasswordEncoder
@@ -15,19 +15,12 @@ class UsuarioService(
     private val passwordEncoder: PasswordEncoder
 ) {
 
-    fun cadastrar(dadosUsuario: DadosCadastroUsuario, veiculo: Veiculo?) {
-        val usuario = dadosUsuario.toModel(passwordEncoder)
+    fun cadastrar(dados: DadosCadastro) {
+        println(dados)
+        val usuario = repository.save(dados.toUsuario(passwordEncoder))
+        val veiculo = veiculoRepository.save(dados.toVeiculo(usuario))
 
-        if (veiculo != null) {
-            usuario.veiculos.add(veiculo)
-        }
-
-        val usuarioSalvo = repository.save(usuario)
-
-        if (veiculo != null) {
-            veiculo.proprietario = usuarioSalvo
-
-            veiculoRepository.save(veiculo)
-        }
+        usuario.veiculos.add(veiculo)
+        println(usuario)
     }
 }
