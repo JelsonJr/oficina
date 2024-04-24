@@ -11,6 +11,6 @@ class AutenticacaoService(private val repository: UsuarioRepository) : UserDetai
 
     @Throws(UsernameNotFoundException::class)
     override fun loadUserByUsername(email: String): UserDetails {
-        return repository.findByEmail(email)
+        return repository.findByEmail(email) as UserDetails
     }
 }

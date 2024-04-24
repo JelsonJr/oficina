@@ -9,7 +9,7 @@
      data-twe-navbar-ref>
     <div class="flex w-full flex-wrap items-center justify-between px-3">
         <div>
-            <a class="mx-2 my-1 flex items-center lg:mb-0 lg:mt-0" href="/">
+            <a class="mx-2 my-1 flex items-center lg:mb-0 lg:mt-0" th:href="@{/}">
                 <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="32"
@@ -57,7 +57,7 @@
                 >
                     <a class="text-white font-semibold transition duration-200 opacity-75 hover:opacity-100 hover:ease-in-out focus:opacity-100 active:opacity-100 motion-reduce:transition-none lg:px-2"
                        aria-current="page"
-                       href="/"
+                       th:href="@{/}"
                        data-twe-nav-link-ref
                     >
                         Home
@@ -79,7 +79,7 @@
                 >
                     <a class="text-white font-semibold transition duration-200 opacity-75 hover:opacity-100 hover:ease-in-out focus:opacity-100 active:opacity-100 motion-reduce:transition-none lg:px-2"
                        aria-current="page"
-                       href="/servicos"
+                       th:href="@{/servicos}"
                        data-twe-nav-link-ref
                     >
                         Nossos serviços
@@ -91,7 +91,7 @@
                 >
                     <a class="text-white font-semibold transition duration-200 opacity-75 hover:opacity-100 hover:ease-in-out focus:opacity-100 active:opacity-100 motion-reduce:transition-none lg:px-2"
                        aria-current="page"
-                       href="/servicos/agendar"
+                       href="#"
                        data-twe-nav-link-ref
                     >
                         Agendar serviço
@@ -103,7 +103,7 @@
                 >
                     <a class="text-white font-semibold transition duration-200 opacity-75 hover:opacity-100 hover:ease-in-out focus:opacity-100 active:opacity-100 motion-reduce:transition-none lg:px-2"
                        aria-current="page"
-                       href="/servicos/historico"
+                       href="#"
                        data-twe-nav-link-ref
                     >
                         Histórico de serviços
@@ -115,7 +115,7 @@
                 >
                     <a class="text-white font-semibold transition duration-200 opacity-75 hover:opacity-100 hover:ease-in-out focus:opacity-100 active:opacity-100 motion-reduce:transition-none lg:px-2"
                        aria-current="page"
-                       href="/veiculos"
+                       th:href="@{/veiculo/cadastrar}"
                        data-twe-nav-link-ref
                     >
                         Cadastrar meu veículo
@@ -127,7 +127,7 @@
                 <a th:if="${usuario == null}"
                    data-twe-ripple-init
                    data-twe-ripple-color="light"
-                   href="/login"
+                   th:href="@{/login}"
                    class="me-3 inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-200 via-red-300 to-yellow-200 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400">
                     <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                         Acessar
@@ -136,7 +136,7 @@
                 <a th:if="${usuario == null}"
                    data-twe-ripple-init
                    data-twe-ripple-color="light"
-                   href="/usuario/cadastro"
+                   th:href="@{/usuario/cadastro}"
                    class="me-3 inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-200 via-red-300 to-yellow-200 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400">
                     <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                         Cadastre-se gratuitamente
