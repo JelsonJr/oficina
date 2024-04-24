@@ -16,7 +16,7 @@ class Usuario(
     val senha: String = "",
     val telefone: String? = null,
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     val veiculos: MutableList<Veiculo> = mutableListOf<Veiculo>()
 ) : UserDetails {
 

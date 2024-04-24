@@ -11,7 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.security.web.SecurityFilterChain
-
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher
 
 @Configuration
 @EnableWebSecurity
@@ -21,20 +21,32 @@ class SecurityConfiguration {
     @Throws(Exception::class)
     fun securityFilterChain(http: HttpSecurity): SecurityFilterChain {
         return http.authorizeHttpRequests {
-            it.requestMatchers("/","/servicos", "/login", "/usuario/cadastro")
+            it.requestMatchers("/", "/servicos", "/login", "/logout", "/usuario/cadastro", "/error")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
         }
-            .formLogin { it.loginPage("/login") }
-            .logout { it.permitAll() }
+            .formLogin {
+                it.loginPage("/login")
+                    .usernameParameter("email")
+                    .passwordParameter("senha")
+                    .defaultSuccessUrl("/")
+                    .failureUrl("/login?loginError=true")
+            }
+            .logout {
+                it.logoutRequestMatcher(AntPathRequestMatcher("/logout", "GET"))
+                    .logoutSuccessUrl("/login?logoutSuccess=true")
+                    .deleteCookies("JSESSIONID")
+                    .invalidateHttpSession(true)
+            }
             .build()
     }
 
     @Bean
     fun webSecurityCustomizer(): WebSecurityCustomizer {
         return WebSecurityCustomizer { web: WebSecurity ->
-            web.ignoring().requestMatchers("/css/**", "/js/**", "/images/**", "/fonts/**", "/*.png", "/*.ico", "/*.jpg")
+            web.ignoring()
+                .requestMatchers("/css/**", "/js/**", "/images/**", "/fonts/**", "/*.png", "/*.ico", "/*.jpg", "/error")
         }
     }
 

@@ -42,7 +42,7 @@ class UsuarioController(
     fun cadastrar(@Valid @ModelAttribute dados: DadosCadastro, bindingResult: BindingResult, model: Model): String {
         if (bindingResult.hasErrors()) {
             model.addAttribute("dadosCadastro", dados)
-            return "/usuario/cadastro"
+            return "redirect:/login?cadastroSuccess=true"
         }
 
         this.service.cadastrar(dados)

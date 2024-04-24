@@ -17,6 +17,6 @@ class Veiculo(
         var proprietario: Usuario? = null
 ) {
         override fun toString(): String {
-                return "Veiculo: $placa, $modelo, $ano, $proprietario"
+                return "Veiculo: $placa, $modelo, $ano, ${proprietario?.nome}"
         }
 }

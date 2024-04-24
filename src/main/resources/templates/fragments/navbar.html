@@ -85,7 +85,7 @@
                         Nossos serviços
                     </a>
                 </li>
-                <li th:unless="${usuario == null}"
+                <li th:if="${usuario != null}"
                     class="my-2 ps-2 lg:my-0 lg:pe-1 lg:ps-2"
                     data-twe-nav-item-ref
                 >
@@ -97,7 +97,7 @@
                         Agendar serviço
                     </a>
                 </li>
-                <li th:unless="${usuario == null}"
+                <li th:if="${usuario != null}"
                     class="my-2 ps-2 lg:my-0 lg:pe-1 lg:ps-2"
                     data-twe-nav-item-ref
                 >
@@ -109,7 +109,7 @@
                         Histórico de serviços
                     </a>
                 </li>
-                <li th:unless="${usuario == null}"
+                <li th:if="${usuario != null}"
                     class="my-2 ps-2 lg:my-0 lg:pe-1 lg:ps-2"
                     data-twe-nav-item-ref
                 >
@@ -124,7 +124,7 @@
             </ul>
 
             <div class="flex items-center">
-                <a th:unless="${usuario != null}"
+                <a th:if="${usuario == null}"
                    data-twe-ripple-init
                    data-twe-ripple-color="light"
                    href="/login"
@@ -133,13 +133,22 @@
                         Acessar
                     </span>
                 </a>
-                <a th:unless="${usuario != null}"
+                <a th:if="${usuario == null}"
                    data-twe-ripple-init
                    data-twe-ripple-color="light"
                    href="/usuario/cadastro"
                    class="me-3 inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-200 via-red-300 to-yellow-200 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400">
                     <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                         Cadastre-se gratuitamente
+                    </span>
+                </a>
+                <a th:if="${usuario != null}"
+                   data-twe-ripple-init
+                   data-twe-ripple-color="light"
+                   th:href="@{/logout}"
+                   class="me-3 inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-200 via-red-300 to-yellow-200 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400">
+                    <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                        Logout
                     </span>
                 </a>
                 <a href="https://github.com/JelsonJr"
