@@ -2,11 +2,11 @@ package br.com.oficina.services.usuario.validations
 
 import br.com.oficina.modelos.DadosCadastro
 import br.com.oficina.repositorys.UsuarioRepository
-import br.com.oficina.services.usuario.validations.exceptions.CadastroInvalidoException
+import br.com.oficina.infra.errors.exceptions.CadastroInvalidoException
 import org.springframework.stereotype.Service
 
 @Service
-class ValidaUsuarioJaCadastrado(val repository: UsuarioRepository) : Validation {
+class ValidaUsuarioJaCadastrado(val repository: UsuarioRepository) : UsuarioValidation {
 
     override fun validar(dados: DadosCadastro) {
         val usuarioComMesmoEmailJaCadastrado = repository.findByEmail(dados.email)

@@ -32,7 +32,7 @@ class LoginController {
 
         if (cookieExpired) {
             println("Cookie Expired - LoginController")
-            model.addAttribute("cookieExpired", "Tempo de acesso expirado, por favor, realize o login novamente.")
+            model.addAttribute("cookieExpired", "Acesso inválido ou expirado, por favor, realize o login novamente.")
         }
 
         if (logoutSuccess) {

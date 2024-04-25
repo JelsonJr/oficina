@@ -1,8 +1,10 @@
 package br.com.oficina.controllers
 
+import br.com.oficina.infra.errors.exceptions.CadastroInvalidoException
 import br.com.oficina.modelos.DadosCadastro
+import br.com.oficina.services.CookieService
 import br.com.oficina.services.usuario.UsuarioService
-import br.com.oficina.services.usuario.validations.exceptions.CadastroInvalidoException
+import jakarta.servlet.http.HttpServletRequest
 import jakarta.validation.Valid
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
@@ -22,7 +24,13 @@ class UsuarioController(
     fun visualizarPerfil() = "usuario/index"
 
     @GetMapping("/cadastro")
-    fun formularioDeCadastro(model: Model): String {
+    fun formularioDeCadastro(model: Model, request: HttpServletRequest): String {
+        val cookie = CookieService.getCookie(request, "usuario_id")
+
+        if (cookie != null) {
+            return "redirect:/error"
+        }
+
         model.addAttribute(
             "dadosCadastro", DadosCadastro(
                 "",
@@ -40,7 +48,18 @@ class UsuarioController(
     }
 
     @PostMapping("/cadastro")
-    fun cadastrar(@Valid @ModelAttribute dados: DadosCadastro, bindingResult: BindingResult, model: Model): String {
+    fun cadastrar(
+        @Valid @ModelAttribute dados: DadosCadastro,
+        bindingResult: BindingResult,
+        model: Model,
+        request: HttpServletRequest
+    ): String {
+        val cookie = CookieService.getCookie(request, "usuario_id")
+
+        if (cookie != null) {
+            return "redirect:/error"
+        }
+
         if (bindingResult.hasErrors()) {
             model.addAttribute("dadosCadastro", dados)
             return "usuario/cadastro"
@@ -49,8 +68,8 @@ class UsuarioController(
         try {
             this.service.cadastrar(dados)
         } catch (ex: CadastroInvalidoException) {
-            model.addAttribute("erroDeCadastro", ex.message);
-            return "usuario/cadastro";
+            model.addAttribute("erroDeCadastro", ex.message)
+            return "usuario/cadastro"
         }
 
         return "redirect:/login?cadastroSuccess=true"
