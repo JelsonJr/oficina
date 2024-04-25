@@ -26,7 +26,7 @@ data class DadosCadastro(
     val telefone: String? = null,
 
     @field:NotBlank(message = "O campo da placa do veículo não pode estar em branco")
-    @field:Size(min = 3, max = 7, message = "A placa deve ter entre 3 e 7 caracteres")
+    @field:Pattern(regexp = "[A-Z]{3}\\d{4}", message = "Placa inválida")
     val placa: String,
 
     @field:NotBlank(message = "O campo do modelo do veículo não pode estar em branco")

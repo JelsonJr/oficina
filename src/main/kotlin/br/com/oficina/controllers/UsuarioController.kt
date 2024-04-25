@@ -21,7 +21,15 @@ class UsuarioController(
 ) {
 
     @GetMapping
-    fun visualizarPerfil() = "usuario/index"
+    fun visualizarPerfil(model: Model, request: HttpServletRequest): String {
+        val cookie = CookieService.getCookie(request, "usuario_id") ?: return "redirect:/login?cookieExpired=true"
+        model.addAttribute("logado", cookie)
+
+        val usuario = this.service.getUsuario(cookie.toLong())
+        model.addAttribute("usuario", usuario)
+
+        return "usuario/index"
+    }
 
     @GetMapping("/cadastro")
     fun formularioDeCadastro(model: Model, request: HttpServletRequest): String {

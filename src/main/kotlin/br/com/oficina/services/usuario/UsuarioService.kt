@@ -1,8 +1,10 @@
 package br.com.oficina.services.usuario
 
+import br.com.oficina.extensions.toDadosDetalhamento
 import br.com.oficina.extensions.toUsuario
 import br.com.oficina.extensions.toVeiculo
 import br.com.oficina.modelos.DadosCadastro
+import br.com.oficina.modelos.usuario.DadosDetalhamentoUsuario
 import br.com.oficina.repositorys.UsuarioRepository
 import br.com.oficina.repositorys.VeiculoRepository
 import br.com.oficina.services.usuario.validations.UsuarioValidation
@@ -21,8 +23,14 @@ class UsuarioService(
         validacoes.forEach { it.validar(dados) }
 
         val usuario = repository.save(dados.toUsuario(passwordEncoder))
-        val veiculo = veiculoRepository.save(dados.toVeiculo(usuario))
+        val veiculo = dados.toVeiculo(usuario)
+        val veiculoSalvo = veiculoRepository.save(veiculo)
 
-        usuario.veiculos.add(veiculo)
+        usuario.veiculos.add(veiculoSalvo)
+        repository.save(usuario)
+    }
+
+    fun getUsuario(id: Long): DadosDetalhamentoUsuario {
+        return repository.getReferenceById(id).toDadosDetalhamento()
     }
 }

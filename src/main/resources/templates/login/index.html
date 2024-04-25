@@ -3,62 +3,76 @@
 <head th:insert="~{fragments/header}">
     <title>Title</title>
 </head>
-<body class="bg-cinza-claro dark:bg-preto flex items-center justify-center h-screen">
-    <section class="my-auto mx-auto w-full max-w-lg">
-        <h1 class="text-center text-xl text-cinza dark:text-branco my-4">Insira seu email e senha de acesso para concluir o log in</h1>
+<body class="bg-gray-400 dark:bg-preto flex items-center justify-center h-screen">
+<section class="my-auto mx-auto w-full max-w-lg">
+    <h1 class="text-center text-xl text-branco my-4">Insira seu email e senha de acesso para concluir o
+        log in</h1>
 
-        <h2 th:if="${loginError}" th:text="${loginError}" class="text-center text-red-600 text-lg my-4"></h2>
-        <h2 th:if="${loginRequired}" th:text="${loginRequired}" class="text-center text-red-600 text-lg my-4"></h2>
-        <h2 th:if="${cookieExpired}" th:text="${cookieExpired}" class="text-center text-red-600 text-lg my-4"></h2>
-        <h2 th:if="${logoutSuccess}" th:text="${logoutSuccess}" class="text-center text-green-600 text-lg my-4"></h2>
-        <h2 th:if="${cadastroSuccess}" th:text="${cadastroSuccess}" class="text-center text-green-600 text-lg my-4"></h2>
+    <h2 th:if="${loginError}" th:text="${loginError}" class="text-center text-red-600 text-lg my-4"></h2>
+    <h2 th:if="${loginRequired}" th:text="${loginRequired}" class="text-center font-bold text-red-800 dark:text-red-600 text-lg my-4"></h2>
+    <h2 th:if="${cookieExpired}" th:text="${cookieExpired}" class="text-center font-bold text-red-800 dark:text-red-600 text-lg my-4"></h2>
+    <h2 th:if="${logoutSuccess}" th:text="${logoutSuccess}" class="text-center font-bold text-green-800 dark:text-green-600 text-lg my-4"></h2>
+    <h2 th:if="${cadastroSuccess}" th:text="${cadastroSuccess}" class="text-center font-bold text-green-800 dark:text-green-600 text-lg my-4"></h2>
 
-        <form th:action="@{/login}" th:object="${dadosLogin}" method="post" class="bg-branco shadow-md rounded px-8 pt-6 pb-8 mb-4 dark:bg-cinza">
-            <div class="relative z-0 w-full mb-5 group">
-                <input
-                        type="email"
-                        name="email"
-                        id="email"
-                        class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none text-white border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                        placeholder=" "
-                        th:field="*{email}"
-                        required
-                />
-                <label
-                        for="email"
-                        class="peer-focus:font-medium absolute text-sm text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                >
-                    Endereço de email
-                </label>
-                <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-red-600 text-sm"></span>
-            </div>
-            <div class="relative z-0 w-full mb-5 group">
-                <input
-                        type="password"
-                        name="senha"
-                        id="senha"
-                        class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none text-white border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                        placeholder=" "
-                        th:field="*{senha}"
-                        required
-                />
-                <label
-                        for="senha"
-                        class="peer-focus:font-medium absolute text-sm text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                >
-                    Senha de acesso
-                </label>
-                <span th:if="${#fields.hasErrors('senha')}" th:errors="*{senha}" class="text-red-600 text-sm"></span>
-            </div>
-            <div class="flex items-center justify-between">
-                <a href="/" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline dark:bg-red-600 dark:hover:bg-red-700 dark:focus:bg-red-800">
-                    Voltar para home
-                </a>
-                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:bg-blue-800">
-                    Logar
-                </button>
-            </div>
-        </form>
-    </section>
+    <form th:action="@{/login}" th:object="${dadosLogin}" method="post"
+          class="bg-branco shadow-md rounded px-8 pt-6 pb-8 mb-4 dark:bg-cinza">
+        <div class="relative z-0 w-full mb-5 group">
+            <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none text-gray-500 dark:text-white border-gray-400 dark:border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" "
+                    th:field="*{email}"
+                    required
+            />
+            <label
+                    for="email"
+                    class="peer-focus:font-medium absolute text-sm text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+                Endereço de email
+            </label>
+            <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-red-600 text-sm"></span>
+        </div>
+        <div class="relative z-0 w-full mb-5 group">
+            <input
+                    type="password"
+                    name="senha"
+                    id="senha"
+                    class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none text-gray-500 dark:text-white border-gray-400 dark:border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" "
+                    th:field="*{senha}"
+                    required
+            />
+            <label
+                    for="senha"
+                    class="peer-focus:font-medium absolute text-sm text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+                Senha de acesso
+            </label>
+            <span th:if="${#fields.hasErrors('senha')}" th:errors="*{senha}" class="text-red-600 text-sm"></span>
+        </div>
+
+        <h3 th:if="${cadastroSuccess == null}" class="text-cinza dark:text-branco text-center my-5">
+            <span>Ainda não é cadastrado? Cadastre-se</span>
+            <a th:href="@{/usuario/cadastro}"
+               class="text-cinza dark:text-white underline font-bold rounded focus:outline-none focus:shadow-outline"
+            >
+                aqui
+            </a>
+        </h3>
+
+        <div class="flex items-center justify-between">
+            <a href="/"
+               class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline dark:bg-red-600 dark:hover:bg-red-700 dark:focus:bg-red-800">
+                Voltar para home
+            </a>
+            <button type="submit"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:bg-blue-800">
+                Logar
+            </button>
+        </div>
+    </form>
+</section>
 </body>
 </html>

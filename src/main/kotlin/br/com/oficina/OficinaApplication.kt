@@ -3,7 +3,7 @@ package br.com.oficina
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
-@SpringBootApplication
+@SpringBootApplication()
 class OficinaApplication
 
 fun main(args: Array<String>) {

@@ -22,7 +22,8 @@ class VeiculoService(
         val veiculo = dadosCadastroVeiculo.toVeiculo(proprietario)
 
         val veiculoCadastrado = repository.save(veiculo)
-        proprietario.veiculos.add(veiculoCadastrado)
-    }
 
+        proprietario.veiculos.add(veiculoCadastrado)
+        usuarioRepository.save(proprietario)
+    }
 }

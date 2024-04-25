@@ -3,7 +3,7 @@
 <head th:insert="~{fragments/header}">
     <title>Title</title>
 </head>
-<body class="bg-branco dark:bg-cinza">
+<body class="bg-gray-400 dark:bg-cinza">
 <header>
     <nav th:replace="fragments/navbar :: navbar(usuario=${logado})"></nav>
 </header>
@@ -12,216 +12,190 @@
         Nossos principais serviços
     </h1>
     <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5">
-        <div class="max-w-lg bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="mx-auto md:mx-0 max-w-lg bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
                 <img class="rounded-t-lg" th:src="@{/images/oficina.jpg}" alt=""/>
             </a>
             <div class="p-5">
                 <a href="#">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy
-                        technology
-                        acquisitions 2021</h5>
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        Manutenção Preventiva
+                    </h5>
                 </a>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
-                    acquisitions of 2021 so far, in reverse chronological order.</p>
-                <a href="#"
-                   class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    Read more
-                    <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                         fill="none" viewBox="0 0 14 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                    </svg>
-                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Inspeção regular e substituição de peças
+                    desgastadas para evitar problemas futuros.</p>
+                <div th:replace="fragments/botaoAgendar :: botaoAgendar(logado=${logado})"></div>
             </div>
         </div>
-        <div class="max-w-lg bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="mx-auto md:mx-0 max-w-lg bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
                 <img class="rounded-t-lg" th:src="@{/images/oficina.jpg}" alt=""/>
             </a>
             <div class="p-5">
                 <a href="#">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy
-                        technology
-                        acquisitions 2021</h5>
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Troca de Óleo e
+                        Filtro</h5>
                 </a>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
-                    acquisitions of 2021 so far, in reverse chronological order.</p>
-                <a href="#"
-                   class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    Read more
-                    <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                         fill="none" viewBox="0 0 14 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                    </svg>
-                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Substituição do óleo do motor e do filtro
+                    para garantir o bom funcionamento do motor.</p>
+                <div th:replace="fragments/botaoAgendar :: botaoAgendar(logado=${logado})"></div>
             </div>
         </div>
-        <div class="max-w-lg bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="mx-auto md:mx-0 max-w-lg bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
                 <img class="rounded-t-lg" th:src="@{/images/oficina.jpg}" alt=""/>
             </a>
             <div class="p-5">
                 <a href="#">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy
-                        technology
-                        acquisitions 2021</h5>
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        Alinhamento e Balanceamento
+                    </h5>
                 </a>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
-                    acquisitions of 2021 so far, in reverse chronological order.</p>
-                <a href="#"
-                   class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    Read more
-                    <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                         fill="none" viewBox="0 0 14 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                    </svg>
-                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                    Ajuste da geometria das rodas para garantir estabilidade e dirigibilidade, além do balanceamento
+                    para evitar vibrações.
+                </p>
+                <div th:replace="fragments/botaoAgendar :: botaoAgendar(logado=${logado})"></div>
             </div>
         </div>
-        <div class="max-w-lg bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="mx-auto md:mx-0 max-w-lg bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
                 <img class="rounded-t-lg" th:src="@{/images/oficina.jpg}" alt=""/>
             </a>
             <div class="p-5">
                 <a href="#">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy
-                        technology
-                        acquisitions 2021</h5>
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Reparos de
+                        Motor</h5>
                 </a>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
-                    acquisitions of 2021 so far, in reverse chronological order.</p>
-                <a href="#"
-                   class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    Read more
-                    <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                         fill="none" viewBox="0 0 14 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                    </svg>
-                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Diagnóstico e reparo de problemas no motor,
+                    como vazamentos, superaquecimento, etc.</p>
+                <div th:replace="fragments/botaoAgendar :: botaoAgendar(logado=${logado})"></div>
             </div>
         </div>
-        <div class="max-w-lg bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="mx-auto md:mx-0 max-w-lg bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
                 <img class="rounded-t-lg" th:src="@{/images/oficina.jpg}" alt=""/>
             </a>
             <div class="p-5">
                 <a href="#">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy
-                        technology
-                        acquisitions 2021</h5>
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Freios e
+                        Suspensão</h5>
                 </a>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
-                    acquisitions of 2021 so far, in reverse chronological order.</p>
-                <a href="#"
-                   class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    Read more
-                    <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                         fill="none" viewBox="0 0 14 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                    </svg>
-                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Manutenção e substituição de pastilhas de
+                    freio, discos, amortecedores, molas e outros componentes relacionados.</p>
+                <div th:replace="fragments/botaoAgendar :: botaoAgendar(logado=${logado})"></div>
             </div>
         </div>
-        <div class="max-w-lg bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="mx-auto md:mx-0 max-w-lg bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
                 <img class="rounded-t-lg" th:src="@{/images/oficina.jpg}" alt=""/>
             </a>
             <div class="p-5">
                 <a href="#">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy
-                        technology
-                        acquisitions 2021</h5>
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Troca de Correias e
+                        Tensionadores</h5>
                 </a>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
-                    acquisitions of 2021 so far, in reverse chronological order.</p>
-                <a href="#"
-                   class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    Read more
-                    <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                         fill="none" viewBox="0 0 14 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                    </svg>
-                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Substituição de correias de distribuição,
+                    correias auxiliares e seus tensionadores para evitar falhas no funcionamento do motor.</p>
+                <div th:replace="fragments/botaoAgendar :: botaoAgendar(logado=${logado})"></div>
             </div>
         </div>
-        <div class="max-w-lg bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="mx-auto md:mx-0 max-w-lg bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
                 <img class="rounded-t-lg" th:src="@{/images/oficina.jpg}" alt=""/>
             </a>
             <div class="p-5">
                 <a href="#">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy
-                        technology
-                        acquisitions 2021</h5>
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Reparo de
+                        Transmissão</h5>
                 </a>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
-                    acquisitions of 2021 so far, in reverse chronological order.</p>
-                <a href="#"
-                   class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    Read more
-                    <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                         fill="none" viewBox="0 0 14 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                    </svg>
-                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Diagnóstico e reparo de problemas na
+                    transmissão, como troca de fluido, substituição de peças danificadas, etc.</p>
+                <div th:replace="fragments/botaoAgendar :: botaoAgendar(logado=${logado})"></div>
             </div>
         </div>
-        <div class="max-w-lg bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="mx-auto md:mx-0 max-w-lg bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
                 <img class="rounded-t-lg" th:src="@{/images/oficina.jpg}" alt=""/>
             </a>
             <div class="p-5">
                 <a href="#">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy
-                        technology
-                        acquisitions 2021</h5>
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Sistema de
+                        Arrefecimento</h5>
                 </a>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
-                    acquisitions of 2021 so far, in reverse chronological order.</p>
-                <a href="#"
-                   class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    Read more
-                    <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                         fill="none" viewBox="0 0 14 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                    </svg>
-                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Manutenção e reparo do sistema de
+                    arrefecimento, incluindo radiador, bomba d'água, termostato, mangueiras, etc.</p>
+                <div th:replace="fragments/botaoAgendar :: botaoAgendar(logado=${logado})"></div>
             </div>
         </div>
-        <div class="max-w-lg bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="mx-auto md:mx-0 max-w-lg bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
                 <img class="rounded-t-lg" th:src="@{/images/oficina.jpg}" alt=""/>
             </a>
             <div class="p-5">
                 <a href="#">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy
-                        technology
-                        acquisitions 2021</h5>
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Sistema Elétrico e
+                        Eletrônico</h5>
                 </a>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
-                    acquisitions of 2021 so far, in reverse chronological order.</p>
-                <a href="#"
-                   class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    Read more
-                    <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                         fill="none" viewBox="0 0 14 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                    </svg>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                    Diagnóstico e reparo de problemas elétricos e eletrônicos, como falhas na partida, problemas de
+                    iluminação, sistemas de injeção
+                    eletrônica, entre outros.
+                </p>
+                <div th:replace="fragments/botaoAgendar :: botaoAgendar(logado=${logado})"></div>
+            </div>
+        </div>
+        <div class="mx-auto md:mx-0 max-w-lg bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <a href="#">
+                <img class="rounded-t-lg" th:src="@{/images/oficina.jpg}" alt=""/>
+            </a>
+            <div class="p-5">
+                <a href="#">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Serviços de
+                        Pneus</h5>
                 </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Reparos de pneus furados, substituição de
+                    pneus desgastados, alinhamento, balanceamento e calibragem.</p>
+                <div th:replace="fragments/botaoAgendar :: botaoAgendar(logado=${logado})"></div>
+            </div>
+        </div>
+        <div class="mx-auto md:mx-0 max-w-lg bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <a href="#">
+                <img class="rounded-t-lg" th:src="@{/images/oficina.jpg}" alt=""/>
+            </a>
+            <div class="p-5">
+                <a href="#">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Reparo de Sistema
+                        de Direção</h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                    Manutenção e reparo do sistema de direção,
+                    incluindo caixa de direção, barras de direção, terminais, entre outros componentes. Isso é crucial
+                    para garantir a segurança e a dirigibilidade do veículo, além de evitar problemas de alinhamento e
+                    desgaste prematuro dos pneus.
+                </p>
+                <div th:replace="fragments/botaoAgendar :: botaoAgendar(logado=${logado})"></div>
+            </div>
+        </div>
+        <div class="mx-auto md:mx-0 max-w-lg bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <a href="#">
+                <img class="rounded-t-lg" th:src="@{/images/oficina.jpg}" alt=""/>
+            </a>
+            <div class="p-5">
+                <a href="#">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Diagnóstico
+                        Mecânico</h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                    Realização de testes físicos e inspeções
+                    visuais detalhadas para identificar problemas mecânicos no veículo. Isso inclui a verificação de
+                    ruídos anormais, vazamentos, desgaste de componentes e outras anomalias que podem afetar o
+                    desempenho do veículo.
+                </p>
+                <div th:replace="fragments/botaoAgendar :: botaoAgendar(logado=${logado})"></div>
             </div>
         </div>
     </section>
-
-
 </main>
 <footer th:replace="fragments/footer :: footer"></footer>
 <script th:src="@{/js/navbar.js}"></script>

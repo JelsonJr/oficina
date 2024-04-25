@@ -3,13 +3,13 @@
 <head th:insert="~{fragments/header}">
     <title>Title</title>
 </head>
-<body class="bg-branco dark:bg-cinza">
+<body class="bg-gray-400 dark:bg-cinza">
 <header>
     <nav th:replace="fragments/navbar :: navbar(usuario=${logado})"></nav>
 </header>
 <main class="flex items-center justify-center h-screen">
     <section class="my-auto mx-auto w-full max-w-xl">
-        <h1 class="text-center text-xl text-cinza dark:text-branco my-4">
+        <h1 class="text-center text-xl text-branco my-4">
             Insira as informações para cadastrar um novo veículo
         </h1>
         <div th:if="${erroDeCadastro}" class="bg-red-100 mb-4 rounded-lg p-0.5 mx-auto max-w-sm">
@@ -25,7 +25,7 @@
                         type="text"
                         name="placa"
                         id="placa"
-                        class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none text-white border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none text-gray-500 dark:text-white border-gray-400 dark:border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                         placeholder=" "
                         th:field="*{placa}"
                         required
@@ -43,7 +43,7 @@
                         type="text"
                         name="modelo"
                         id="modelo"
-                        class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none text-white border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none text-gray-500 dark:text-white border-gray-400 dark:border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                         placeholder=" "
                         th:field="*{modelo}"
                         required
@@ -65,7 +65,7 @@
                         pattern="\d{4}"
                         name="ano"
                         id="ano"
-                        class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none text-white border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none text-gray-500 dark:text-white border-gray-400 dark:border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                         placeholder=" "
                         th:field="*{ano}"
                         required

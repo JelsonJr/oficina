@@ -6,5 +6,6 @@ data class DadosDetalhamentoUsuario(
     val nome: String,
     val email: String,
     val cpf: String,
+    val telefone: String? = null,
     val veiculos: MutableList<Veiculo>
 )

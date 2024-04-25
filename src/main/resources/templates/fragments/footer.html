@@ -1,40 +1,26 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head th:insert="header">
-    <title>Title</title>
-</head>
-<body>
-<footer th:fragment="footer" id="footer-contato" class="mt-8 bg-cinza shadow dark:bg-preto h-40">
-    <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023
-          <a href="https://github.com/JelsonJr"
-             target="_blank"
-             class="hover:underline"
-          >
-              ColtMaster™
-          </a>. All Rights Reserved.
-    </span>
-        <ul class="flex flex-wrap items-center gap-10 mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
-            <li class="flex flex-col items-center justify-center">
-                <a href="#" class="hover:underline me-4 md:me-6">WhatsApp</a>
-                <p>(42) 99999-9999</p>
-            </li>
-            <li>
-                <a href="#" class="hover:underline me-4 md:me-6">TikTok</a>
-                <p>@Oficina_SeuGilberto</p>
-            </li>
-            <li>
-                <a href="#" class="hover:underline me-4 md:me-6">Instagram</a>
-                <p>@OficinaSeuGilberto</p>
-            </li>
-            <li>
-                <a href="https://github.com/JelsonJr" target="_blank" class="hover:underline">Github</a>
-                <p>@JelsonJr/oficina</p>
-            </li>
-        </ul>
+<footer th:fragment="footer" id="footer-contato" class="bg-cinza dark:bg-preto shadow">
+    <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+                <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">ColtMaster</span>
+            </a>
+            <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-branco sm:mb-0 dark:text-cinza-claro">
+                <li>
+                    <span class="cursor-pointer hover:underline me-4 md:me-6">Instagram</span>
+                </li>
+                <li>
+                    <span class="cursor-pointer hover:underline me-4 md:me-6">TikTok</span>
+                </li>
+                <li>
+                    <span class="cursor-pointer hover:underline me-4 md:me-6">WhatsApp</span>
+                </li>
+                <li>
+                    <span class="cursor-pointer hover:underline">Email</span>
+                </li>
+            </ul>
+        </div>
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://github.com/JelsonJr" class="hover:underline">ColtMaster™</a>. All Rights Reserved.</span>
     </div>
-    <h4 class="text-lg text-center font-medium text-gray-500 dark:text-gray-400 mb-4">Disponível das 8h às 18h!</h4>
-    <h5 class="text-lg text-center font-medium text-gray-500 dark:text-gray-400">Agende já um horário para realizarmos o seu orçamento! E lembre-se de nos seguir nas redes sociais.</h5>
 </footer>
-</body>
-</html>
